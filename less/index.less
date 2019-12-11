@@ -20,7 +20,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -53,7 +52,82 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
+
+html, body {
+	height: 100%;
+}
+
+// variables
+@main-accent: midnightblue;
+@secondary-accent: gainsboro;
+
+// mixins
+.flex-parent {
+	display: flex;
+	align-items: center;
+}
+
+.add-padding {
+	padding: 3%;
+}
+
+// header styles
+header {
+	width: 70%;
+	height: 50vh;
+	margin: 0 auto;
+	line-height: 1.5;
+
+	nav {
+		.flex-parent();
+		.add-padding();
+		justify-content: space-between;
+
+
+		a {
+			font-size: 1.25rem;
+			text-decoration: none;
+			color: @main-accent;
+			font-weight: bold;
+		}
+	
+	} // closes the nav
+
+	div {
+		.flex-parent();
+		justify-content: center;
+		flex-direction: column;
+		height: 70%;
+	}
+
+	h1 {
+		font-size: 3rem;
+	} // closes h1
+
+	h2 {
+		font-size: 2.5rem;
+	} // closes h2
+
+} // closes the header
+
+section {
+	width: 80%;
+	margin: 0 auto;
+	.add-padding();
+	.flex-parent();
+	justify-content: space-between;
+
+	h2 {
+		font-size: 2rem;
+		color: @main-accent;
+	}
+
+	p {
+		
+	}
+
+} // closes section
 
