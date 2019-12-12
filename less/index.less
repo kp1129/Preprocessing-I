@@ -135,10 +135,6 @@ table {
 
 html {
   font-size: 62.5%;
-}
-
-html,
-body {
   height: 100%;
 }
 
@@ -156,128 +152,184 @@ body {
   padding: 3%;
 }
 
-// header styles
-header {
-  width: 70%;
-  min-height: 35vh;
-  margin: 0 auto;
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
 
-  nav {
-    .flex-parent();
-    .add-padding();
-    justify-content: space-between;
-    border-bottom: 2px dotted @secondary-accent;
+  // header styles
+  header {
+    width: 70%;
+    min-height: 30vh;
+    margin: 0 auto;
 
-    a {
-      font-size: 1.15rem;
-      text-decoration: none;
-      color: @main-accent;
-      font-weight: bold;
-	} // closes the a
-	
-  } // closes the nav
+    @media (max-width: 500px) {
+      min-height: 25vh;
+    } // closes @media rules
 
-  div {
-    .flex-parent();
-    justify-content: center;
-    flex-direction: column;
-    height: 70%;
-  } // closes the div inside the header
+    nav {
+      .flex-parent();
+      .add-padding();
+      justify-content: space-between;
+      border-bottom: 2px dotted @secondary-accent;
 
-  h1 {
-    font-size: 3rem;
-    padding-top: 3%;
-  } // closes h1
+      a {
+        font-size: 1.15rem;
+        text-decoration: none;
+        color: @main-accent;
+        font-weight: bold;
 
-  h2 {
-    font-size: 2.5rem;
-    .add-padding();
-  } // closes h2
+        @media (max-width: 500px) {
+          flex-direction: column;
+          padding: 10px 0;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+        } // closes @media rules
+      } // closes a
 
-} // closes the header
-
-// main content styles
-
-#intro {
-  background-color: @secondary-accent;
-  font-size: 2rem;
-}
-
-section {
-  width: 70%;
-  margin: 0 auto;
-  font-size: 1.6rem;
-  .flex-parent();
-  flex-direction: column;
-  justify-content: space-between;
-
-  h2 {
-    font-size: 2rem;
-    color: @main-accent;
-    .add-padding();
-  } // closes h2
-
-  p {
-    .add-padding();
-  } // closes the p
-
-  ul {
-    .flex-parent();
+      @media (max-width: 500px) {
+        flex-direction: column;
+        padding: 5px 0;
+      } // closes @media rules
+    } // closes nav
 
     div {
-      width: 50%;
-	} // closes the div inside the ul
-	
-  } // closes the ul
+      .flex-parent();
+      justify-content: center;
+      flex-direction: column;
+      height: 70%;
+    } // closes the div inside the header
 
-} // closes section
+    h1 {
+      font-size: 3rem;
+      padding-top: 3%;
 
-// table styles
+      @media (max-width: 500px) {
+        padding-top: 5px;
+      } // closes @media rules
+    } // closes h1
 
-table {
-  width: 100%;
+    h2 {
+      font-size: 2.5rem;
+      .add-padding();
+    } // closes h2
+  } // closes the header
 
-  th {
-    font-weight: bold;
-  } // closes the table header
+  // main content styles
 
-  td {
-    padding: 5px 0;
-    margin: 0 5px;
-  } // closes the table data
+  #intro {
+    background-color: @secondary-accent;
+    font-size: 2rem;
 
-  .small {
-    width: 11%;
-  } // closes .small
-
-  .big {
-    width: 60%;
-  } // closes .big
-
-} // closes the table
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  .add-padding();
-  width: 70%;
-  margin: 0 auto;
-  background: @secondary-accent;
+    @media (max-width: 500px) {
+      padding: 5px 0;
+      width: 100%;
+    } // closes @media rules
+  } //closes #intro
 
   section {
-    width: 50%;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    .flex-parent();
+    flex-direction: column;
+    justify-content: space-between;
 
-    form input:focus,
-    form textarea:focus {
-      border: 2px solid @main-accent;
-    } // closes form input and textarea on focus
+    @media (max-width: 500px) {
+      width: 100%;
+    } // closes @media rules
 
-    div {
-      width: 50%;
+    h2 {
+      font-size: 2rem;
+      color: @main-accent;
+      .add-padding();
+    } // closes h2
+
+    p {
+      .add-padding();
+    } // closes p
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      justify-content: space-between;
+
+      li {
+        .add-padding();
+        margin: 3px 0;
+      } // closes li inside ul
+
+      div {
+        width: 50%;
+      } // closes the div inside ul
+    } // closes the ul
+  } // closes section
+
+  // table styles
+
+  table {
+    width: 100%;
+
+    th {
+      font-weight: bold;
+    } // closes the table header
+
+    td {
+      padding: 5px 0;
       margin: 0 5px;
-	} // closes the div inside the footer section
-	
-  } // closes section inside .footer
+    } // closes the table data
 
-} // closes .footer
+    .small {
+      width: 11%;
+    } // closes .small
+
+    .big {
+      width: 60%;
+	} // closes .big
+	
+	@media (max-width: 500px){
+		font-size: 1.15rem;
+	} // closes @media rules
+  } // closes the table
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .add-padding();
+    width: 70%;
+    margin: 0 auto;
+    background: @secondary-accent;
+
+    section {
+      width: 50%;
+
+      form input:focus,
+      form textarea:focus {
+        border: 2px solid @main-accent;
+      } // closes form input and textarea on focus
+
+      div {
+        width: 50%;
+        margin: 0 5px;
+      } // closes the div inside the footer section
+    } // closes section inside .footer
+
+    #skills {
+      @media (max-width: 500px) {
+        font-size: 2rem;
+      } // closes @media rules
+    } // closes #skills
+
+    @media (max-width: 500px) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      width: 100%;
+
+      section {
+        width: 100%;
+      }
+    } // closes @media rule
+  } // closes .footer
+} // closes body
