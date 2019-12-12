@@ -1,19 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-  <title>My Resume</title>
+    <title>Katya Pavlopoulos</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
 
-  <link rel="stylesheet" href="css/index.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
+  <body>
+    <header>
+      <nav>
+        <a href="#intro">Intro</a>
+        <a href="#work-history">Work History</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div>
+        <h1>Katya Pavlopoulos</h1>
+        <h2>Sr. Software Engineer</h2>
+      </div>
+    </header>
+    <section id="intro">
+      <p>
+        Senior software engineer with over 5 years of experience in fullstack
+        development, with an emphasis on the frontend and UI/UX for both web and
+        mobile. Launched three side-project apps into Top 10 on Google Play.
+        Currently working on a yet-unannounced project at Google.
+      </p>
+    </section>
 
-<body>
-  <h1>My Resume</h1>
-</body>
+    <section id="work-history">
+      <h2>Work History</h2>
+      <table>
+        <tr>
+          <th class="small">Date</th>
+          <th class="small">Company</th>
+          <th class="small">Title</th>
+          <th class="big">Description</th>
+        </tr>
+        <tr>
+          <td>2020-2023</td>
+          <td>ActiveCampaign</td>
+          <td>Sr. Front End Engineer</td>
+          <td>
+            Joined as a Front End Engineer, later promoted to a senior role.
+            Delivered beautiful UI rendered in React, grew the frontend team,
+            collaborated with designers to improve UX on mobile devices. Worked
+            mostly on the frontend, but also contributed to improving the
+            backend code.
+          </td>
+        </tr>
+        <tr>
+          <td>2023-current</td>
+          <td>Google</td>
+          <td>Senior Software Engineer - Fullstack</td>
+          <td>
+            Joined Google via acquisition of ActiveCampaign. Led the front end
+            team post equisition, then worked on the Gmail team, and now working
+            on a secret project at Google X, the Moonshot Factory.
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <div class="footer">
+      <section id="contact">
+        <h2>Contact</h2>
+        <form action="#">
+          <label for="name">Your name:</label><br />
+          <input id="name" type="text" />
+          <br />
+          <label for="email">Your email:</label><br />
+          <input id="email" type="email" name="" />
+          <br />
+          <label for="message">Your message:</label><br />
+          <textarea id="message" cols="30" rows="10"></textarea>
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>JS/React/Node</li>
+          <li>Python</li>
+          <li>UI/UX</li>
+          <li>Ruby on Rails</li>
+          <li>Team Leadership</li>
+          <li>Mentorship</li>
+        </ul>
+      </section>
+    </div>
+  </body>
 </html>

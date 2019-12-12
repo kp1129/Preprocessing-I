@@ -4,56 +4,332 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+  font-size: 62.5%;
+  height: 100%;
 }
 
+// variables
+@main-accent: midnightblue;
+@secondary-accent: #ebebeb;
+
+// mixins
+.flex-parent {
+  display: flex;
+  align-items: center;
+}
+
+.add-padding {
+  padding: 3%;
+}
+
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+
+  // header styles
+  header {
+    width: 70%;
+    min-height: 30vh;
+    margin: 0 auto;
+
+    @media (max-width: 500px) {
+      min-height: 25vh;
+    } // closes @media rules
+
+    nav {
+      .flex-parent();
+      .add-padding();
+      justify-content: space-between;
+      border-bottom: 2px dotted @secondary-accent;
+
+      a {
+        font-size: 1.15rem;
+        text-decoration: none;
+        color: @main-accent;
+        font-weight: bold;
+
+        @media (max-width: 500px) {
+          flex-direction: column;
+          padding: 10px 0;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+        } // closes @media rules
+      } // closes a
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+        padding: 5px 0;
+      } // closes @media rules
+    } // closes nav
+
+    div {
+      .flex-parent();
+      justify-content: center;
+      flex-direction: column;
+      height: 70%;
+    } // closes the div inside the header
+
+    h1 {
+      font-size: 3rem;
+      padding-top: 3%;
+
+      @media (max-width: 500px) {
+        padding-top: 5px;
+      } // closes @media rules
+    } // closes h1
+
+    h2 {
+      font-size: 2.5rem;
+      .add-padding();
+    } // closes h2
+  } // closes the header
+
+  // main content styles
+
+  #intro {
+    background-color: @secondary-accent;
+    font-size: 2rem;
+
+    @media (max-width: 500px) {
+      padding: 5px 0;
+      width: 100%;
+    } // closes @media rules
+  } //closes #intro
+
+  section {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    .flex-parent();
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    } // closes @media rules
+
+    h2 {
+      font-size: 2rem;
+      color: @main-accent;
+      .add-padding();
+    } // closes h2
+
+    p {
+      .add-padding();
+    } // closes p
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      justify-content: space-between;
+
+      li {
+        .add-padding();
+        margin: 3px 0;
+      } // closes li inside ul
+
+      div {
+        width: 50%;
+      } // closes the div inside ul
+    } // closes the ul
+  } // closes section
+
+  // table styles
+
+  table {
+    width: 100%;
+
+    th {
+      font-weight: bold;
+    } // closes the table header
+
+    td {
+      padding: 5px 0;
+      margin: 0 5px;
+    } // closes the table data
+
+    .small {
+      width: 11%;
+    } // closes .small
+
+    .big {
+      width: 60%;
+	} // closes .big
+	
+	@media (max-width: 500px){
+		font-size: 1.15rem;
+	} // closes @media rules
+  } // closes the table
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .add-padding();
+    width: 70%;
+    margin: 0 auto;
+    background: @secondary-accent;
+
+    section {
+      width: 50%;
+
+      form input:focus,
+      form textarea:focus {
+        border: 2px solid @main-accent;
+      } // closes form input and textarea on focus
+
+      div {
+        width: 50%;
+        margin: 0 5px;
+      } // closes the div inside the footer section
+    } // closes section inside .footer
+
+    #skills {
+      @media (max-width: 500px) {
+        font-size: 2rem;
+      } // closes @media rules
+    } // closes #skills
+
+    @media (max-width: 500px) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      width: 100%;
+
+      section {
+        width: 100%;
+      }
+    } // closes @media rule
+  } // closes .footer
+} // closes body
