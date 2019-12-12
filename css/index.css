@@ -145,18 +145,18 @@ body {
 }
 header {
   width: 70%;
-  height: 50vh;
+  min-height: 35vh;
   margin: 0 auto;
-  line-height: 1.5;
 }
 header nav {
   display: flex;
   align-items: center;
   padding: 3%;
   justify-content: space-between;
+  border-bottom: 2px dotted #ebebeb;
 }
 header nav a {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   text-decoration: none;
   color: midnightblue;
   font-weight: bold;
@@ -170,19 +170,69 @@ header div {
 }
 header h1 {
   font-size: 3rem;
+  padding-top: 3%;
 }
 header h2 {
   font-size: 2.5rem;
+  padding: 3%;
+}
+#intro {
+  background-color: #ebebeb;
+  font-size: 2rem;
 }
 section {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
-  padding: 3%;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
 section h2 {
   font-size: 2rem;
   color: midnightblue;
+  padding: 3%;
+}
+section p {
+  padding: 3%;
+}
+section ul {
+  display: flex;
+  align-items: center;
+}
+section ul div {
+  width: 50%;
+}
+table {
+  width: 100%;
+}
+table th {
+  font-weight: bold;
+}
+table td {
+  padding: 5px 0;
+  margin: 0 5px;
+}
+table .small {
+  width: 11%;
+}
+table .big {
+  width: 60%;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3%;
+  width: 70%;
+  margin: 0 auto;
+  background: #ebebeb;
+}
+.footer section {
+  width: 50%;
+}
+.footer section div {
+  width: 50%;
+  margin: 0 5px;
 }

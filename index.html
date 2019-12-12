@@ -17,8 +17,8 @@
     <header>
       <nav>
         <a href="#intro">Intro</a>
-        <a href="#skills">Skills</a>
         <a href="#work-history">Work History</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
       <div>
@@ -27,34 +27,23 @@
       </div>
     </header>
     <section id="intro">
-      <h2>Summary</h2>
       <p>
         Katya is a senior software engineer with 5 years of experience under her
         belt. She's developed across the full stack, launched a few apps of her
-        own into top 10 on Google Play, and currently works on a top secret
-        project at Google. Occasionally she has time for side projects. You're
-        welcome to reach out using the contact form below.
+        own into top 10 on Google Play, and currently works on a secret project
+        at Google. Occasionally she has time for side projects. You're welcome
+        to reach out using the contact form below.
       </p>
     </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>All things JavaScript</li>
-        <li>Gorgeous and interactive interfaces</li>
-        <li>Ruby on Rails</li>
-        <li>Python</li>
-        <li>Mentoring</li>
-        <li>Team leadership</li>
-      </ul>
-    </section>
+
     <section id="work-history">
       <h2>Work History</h2>
-      <table style="width:100%">
+      <table>
         <tr>
-          <th>Date</th>
-          <th>Company</th>
-          <th>Title</th>
-          <th>Description</th>
+          <th class="small">Date</th>
+          <th class="small">Company</th>
+          <th class="small">Title</th>
+          <th class="big">Description</th>
         </tr>
         <tr>
           <td>2020-2023</td>
@@ -80,14 +69,34 @@
         </tr>
       </table>
     </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <form action="#">
-        <input type="text" />
-        <input type="email" name="" id="" />
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <input type="submit" value="" />
-      </form>
-    </section>
+
+    <div class="footer">
+      <section id="contact">
+        <h2>Contact</h2>
+        <form action="#">
+          <input type="text" />
+          <input type="email" name="" id="" />
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <input type="submit" value="" />
+        </form>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+
+        <ul>
+          <div>
+            <li>Python</li>
+            <li>Team Leadership</li>
+          </div>
+
+          <div>
+            <li>JS/React/Node</li>
+            <li>UI/UX</li>
+            <li>Ruby on Rails</li>
+          </div>
+        </ul>
+      </section>
+    </div>
   </body>
 </html>

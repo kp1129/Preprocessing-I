@@ -62,7 +62,7 @@ html, body {
 
 // variables
 @main-accent: midnightblue;
-@secondary-accent: gainsboro;
+@secondary-accent: #ebebeb;
 
 // mixins
 .flex-parent {
@@ -74,21 +74,22 @@ html, body {
 	padding: 3%;
 }
 
+
 // header styles
 header {
 	width: 70%;
-	height: 50vh;
+	min-height: 35vh;
 	margin: 0 auto;
-	line-height: 1.5;
+	
 
 	nav {
 		.flex-parent();
 		.add-padding();
 		justify-content: space-between;
-
+		border-bottom: 2px dotted @secondary-accent;
 
 		a {
-			font-size: 1.25rem;
+			font-size: 1.15rem;
 			text-decoration: none;
 			color: @main-accent;
 			font-weight: bold;
@@ -105,29 +106,95 @@ header {
 
 	h1 {
 		font-size: 3rem;
+		padding-top: 3%;
 	} // closes h1
 
 	h2 {
 		font-size: 2.5rem;
+		.add-padding();
 	} // closes h2
 
 } // closes the header
 
+// main content styles
+
+#intro {
+	background-color: @secondary-accent;
+	font-size: 2rem;
+}
 section {
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
-	.add-padding();
+	font-size: 1.6rem;
 	.flex-parent();
+	flex-direction: column;
 	justify-content: space-between;
+
+
 
 	h2 {
 		font-size: 2rem;
 		color: @main-accent;
-	}
+		.add-padding();
+	} // closes h2
 
 	p {
-		
+		.add-padding();
+	}
+	ul {
+		.flex-parent();
+
+		div {
+			width: 50%;		
+		} // closes the div inside the ul
+
+	} // closes the ul
+	
+} // closes section
+
+// table styles
+
+table {
+	
+	width: 100%;
+
+	th {
+		font-weight: bold;
 	}
 
-} // closes section
+
+	td {
+		padding: 5px 0;
+		margin: 0 5px;
+	}
+
+	.small {
+		width: 11%;
+	}
+	
+	.big {
+		width: 60%;
+	}
+	
+}
+
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	.add-padding();
+	width: 70%;
+	margin: 0 auto;
+	background: @secondary-accent;
+
+	section {
+		width: 50%;
+		
+		div {
+			width: 50%;
+			margin: 0 5px;
+		}
+	}
+}
 
