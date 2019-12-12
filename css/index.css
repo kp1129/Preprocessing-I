@@ -118,7 +118,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -231,6 +231,10 @@ table .big {
 }
 .footer section {
   width: 50%;
+}
+.footer section form input:focus,
+.footer section form textarea:focus {
+  border: 2px solid midnightblue;
 }
 .footer section div {
   width: 50%;

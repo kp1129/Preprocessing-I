@@ -4,60 +4,142 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 // variables
@@ -66,135 +148,136 @@ html, body {
 
 // mixins
 .flex-parent {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .add-padding {
-	padding: 3%;
+  padding: 3%;
 }
-
 
 // header styles
 header {
-	width: 70%;
-	min-height: 35vh;
-	margin: 0 auto;
+  width: 70%;
+  min-height: 35vh;
+  margin: 0 auto;
+
+  nav {
+    .flex-parent();
+    .add-padding();
+    justify-content: space-between;
+    border-bottom: 2px dotted @secondary-accent;
+
+    a {
+      font-size: 1.15rem;
+      text-decoration: none;
+      color: @main-accent;
+      font-weight: bold;
+	} // closes the a
 	
+  } // closes the nav
 
-	nav {
-		.flex-parent();
-		.add-padding();
-		justify-content: space-between;
-		border-bottom: 2px dotted @secondary-accent;
+  div {
+    .flex-parent();
+    justify-content: center;
+    flex-direction: column;
+    height: 70%;
+  } // closes the div inside the header
 
-		a {
-			font-size: 1.15rem;
-			text-decoration: none;
-			color: @main-accent;
-			font-weight: bold;
-		}
-	
-	} // closes the nav
+  h1 {
+    font-size: 3rem;
+    padding-top: 3%;
+  } // closes h1
 
-	div {
-		.flex-parent();
-		justify-content: center;
-		flex-direction: column;
-		height: 70%;
-	}
-
-	h1 {
-		font-size: 3rem;
-		padding-top: 3%;
-	} // closes h1
-
-	h2 {
-		font-size: 2.5rem;
-		.add-padding();
-	} // closes h2
+  h2 {
+    font-size: 2.5rem;
+    .add-padding();
+  } // closes h2
 
 } // closes the header
 
 // main content styles
 
 #intro {
-	background-color: @secondary-accent;
-	font-size: 2rem;
+  background-color: @secondary-accent;
+  font-size: 2rem;
 }
+
 section {
-	width: 70%;
-	margin: 0 auto;
-	font-size: 1.6rem;
-	.flex-parent();
-	flex-direction: column;
-	justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  .flex-parent();
+  flex-direction: column;
+  justify-content: space-between;
 
+  h2 {
+    font-size: 2rem;
+    color: @main-accent;
+    .add-padding();
+  } // closes h2
 
+  p {
+    .add-padding();
+  } // closes the p
 
-	h2 {
-		font-size: 2rem;
-		color: @main-accent;
-		.add-padding();
-	} // closes h2
+  ul {
+    .flex-parent();
 
-	p {
-		.add-padding();
-	}
-	ul {
-		.flex-parent();
-
-		div {
-			width: 50%;		
-		} // closes the div inside the ul
-
-	} // closes the ul
+    div {
+      width: 50%;
+	} // closes the div inside the ul
 	
+  } // closes the ul
+
 } // closes section
 
 // table styles
 
 table {
-	
-	width: 100%;
+  width: 100%;
 
-	th {
-		font-weight: bold;
-	}
+  th {
+    font-weight: bold;
+  } // closes the table header
 
+  td {
+    padding: 5px 0;
+    margin: 0 5px;
+  } // closes the table data
 
-	td {
-		padding: 5px 0;
-		margin: 0 5px;
-	}
+  .small {
+    width: 11%;
+  } // closes .small
 
-	.small {
-		width: 11%;
-	}
-	
-	.big {
-		width: 60%;
-	}
-	
-}
+  .big {
+    width: 60%;
+  } // closes .big
 
+} // closes the table
 
 .footer {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	.add-padding();
-	width: 70%;
-	margin: 0 auto;
-	background: @secondary-accent;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .add-padding();
+  width: 70%;
+  margin: 0 auto;
+  background: @secondary-accent;
 
-	section {
-		width: 50%;
-		
-		div {
-			width: 50%;
-			margin: 0 5px;
-		}
-	}
-}
+  section {
+    width: 50%;
 
+    form input:focus,
+    form textarea:focus {
+      border: 2px solid @main-accent;
+    } // closes form input and textarea on focus
+
+    div {
+      width: 50%;
+      margin: 0 5px;
+	} // closes the div inside the footer section
+	
+  } // closes section inside .footer
+
+} // closes .footer
